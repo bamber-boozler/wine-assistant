@@ -98,7 +98,7 @@ export default function App() {
 
     try {
       // Send the updated chat history (including the new user message)
-      const response = await getChatResponseViaApi(userMsg.content, nextMessages, inventory);
+      const response = await getChatResponseViaApi(userMsg.content, nextMessages);
 
       const assistantMsg: Message = {
         id: (Date.now() + 1).toString(),

@@ -1,21 +1,19 @@
-import { Message, WineEntry } from "../types";
+import { Message } from "../types";
 
 function slimHistory(history: Message[], maxPairs = 6) {
-  // maxPairs=6 means up to 12 messages total (user+assistant). Adjust if you want.
   const maxMessages = maxPairs * 2;
 
   return (history || [])
     .slice(-maxMessages)
     .map((m) => ({
-      role: m.role,          // 'user' | 'assistant'
-      content: m.content,    // ONLY what we need
+      role: m.role,       // 'user' | 'assistant'
+      content: m.content,
     }));
 }
 
 export async function getChatResponseViaApi(
   userMessage: string,
-  history: Message[],
-  inventory: WineEntry[]
+  history: Message[]
 ): Promise<string> {
   const res = await fetch("/api/chat", {
     method: "POST",
@@ -23,7 +21,6 @@ export async function getChatResponseViaApi(
     body: JSON.stringify({
       userMessage,
       history: slimHistory(history, 6),
-      inventory, // send raw inventory; server formats it
     }),
   });
 
