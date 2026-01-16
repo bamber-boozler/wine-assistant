@@ -1,0 +1,5 @@
+{
+  "name": "Sommelier Assistant",
+  "description": "An AI-powered chatbot for wine bar staff to check inventory and get expert wine recommendations based on live Google Sheet data.",
+  "requestFramePermissions": []
+}

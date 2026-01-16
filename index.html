@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>flere fugle wine assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-teal: #007c80;
+            --brand-oxidred: #6d342d;
+            --brand-black: #000000;
+            --brand-white: #ffffff;
+        }
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: var(--brand-white);
+            color: var(--brand-black);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .brand-heading {
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+        
+        /* Markdown Rendering Styles */
+        .prose-custom {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .prose-custom p {
+            margin-bottom: 0.75rem;
+        }
+        .prose-custom p:last-child {
+            margin-bottom: 0;
+        }
+        .prose-custom ul, .prose-custom ol {
+            margin-bottom: 1rem;
+            padding-left: 1.25rem;
+        }
+        .prose-custom li {
+            margin-bottom: 0.4rem;
+        }
+        .prose-custom ul {
+            list-style-type: disc;
+        }
+        .prose-custom ol {
+            list-style-type: decimal;
+        }
+        .prose-custom strong {
+            font-weight: 800;
+            color: inherit;
+        }
+        .prose-custom h1, .prose-custom h2, .prose-custom h3 {
+            font-weight: 800;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            opacity: 0.9;
+        }
+        .prose-custom h1 { border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2px; }
+
+        /* Assistant Bubble specific tweaks */
+        .assistant-bubble .prose-custom h1, 
+        .assistant-bubble .prose-custom h2, 
+        .assistant-bubble .prose-custom h3 {
+            color: var(--brand-teal);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-teal);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.36.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-markdown": "https://esm.sh/react-markdown@^9.0.1",
+    "remark-gfm": "https://esm.sh/remark-gfm@^4.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="overflow-hidden">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
